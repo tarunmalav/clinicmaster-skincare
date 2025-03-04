@@ -4,8 +4,22 @@ import Sidebar from "../../component/sidebar";
 import { Link } from "react-router-dom";
 import MainHeader from "../../layout/mainheader";
 import ScrolltoTop from "../../component/scrolltotop";
+import emailjs from '@emailjs/browser'; 
+import { useRef } from "react";
 
 function BlogDetails() {
+    const form = useRef();
+	const sendEmail = (e) => {
+		e.preventDefault();
+		//emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', form.current, 'YOUR_USER_ID')
+        emailjs.sendForm('service_61hny88', 'template_vvlidif', e.target, 'd9b2e0f5fc72cb94792110e8ff2028f3-us16')
+		  .then((result) => {
+			  console.log('SUCCESS!',result.text);
+		  }, (error) => {
+			  console.log('FAILED...',error.text);
+		  });
+		  e.target.reset()
+	};	
     return (
         <>
             <MainHeader />
@@ -145,7 +159,7 @@ function BlogDetails() {
                                             <h4 className="comment-reply-title mb-2" id="reply-title">Good Comments</h4>
                                             <p className="dz-title-text">There are many variations of passages of Lorem Ipsum available.</p>
                                             <div className="clearfix">
-                                                <form method="post" id="comments_form" className="comment-form" noValidate>
+                                                <form ref={form} onSubmit={sendEmail} method="post" id="comments_form" className="comment-form" noValidate>
                                                     <p className="comment-form-author">
                                                         <input id="name" placeholder="Author" name="author" type="text" />
                                                     </p>

@@ -3,11 +3,12 @@ import { IMAGES } from "../../constant/theme";
 import Footer from "../../layout/footer";
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { filterdata2 } from "../../constant/alldata";
 import MainHeader from "../../layout/mainheader";
 import ScrolltoTop from "../../component/scrolltotop";
 import StarRating from "../../component/starrating";
+import emailjs from '@emailjs/browser'; 
 
 function ShopDetails() {
     const [count, setCount] = useState(1);
@@ -17,6 +18,18 @@ function ShopDetails() {
     const decrement = () => {
         setCount(count - 1);
     };
+    const form = useRef();
+	const sendEmail = (e) => {
+		e.preventDefault();
+		//emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', form.current, 'YOUR_USER_ID')
+        emailjs.sendForm('service_61hny88', 'template_vvlidif', e.target, 'd9b2e0f5fc72cb94792110e8ff2028f3-us16')
+		  .then((result) => {
+			  console.log('SUCCESS!',result.text);
+		  }, (error) => {
+			  console.log('FAILED...',error.text);
+		  });
+		  e.target.reset()
+	};	
     return (
         <>
             <MainHeader />
@@ -224,7 +237,7 @@ function ShopDetails() {
                                                             </div>
                                                         </div>
                                                         <div className="clearfix">
-                                                            <form method="post" id="comments_form" className="comment-form" noValidate>
+                                                            <form ref={form} onSubmit={sendEmail} method="post" id="comments_form" className="comment-form" noValidate>
                                                                 <p className="comment-form-author">
                                                                     <input id="name" placeholder="Author" name="author" type="text" />
                                                                 </p>

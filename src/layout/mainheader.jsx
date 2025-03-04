@@ -79,7 +79,7 @@ function MainHeader({ transparent }) {
                                         <React.Fragment key={data.id || i}>
                                             {data.classChange && data.classChange.includes('has-mega-menu') ? (
                                                 <li className={`has-mega-menu sub-menu-down auto-width menu-left ${i === isActive ? 'open' : ''}`}>
-                                                    <Link onClick={() => menuHandler(i)} to={"#"}>
+                                                    <Link onClick={() => menuHandler(i)} to={data.to}>
                                                         <span>{data.title}</span>
                                                         <i className="fas fa-chevron-down tabIndex" />
                                                     </Link>
@@ -87,7 +87,7 @@ function MainHeader({ transparent }) {
                                                         <ul className="demo-menu">
                                                             {data.content.map((item, index) => (
                                                                 <li key={item.id || index}>
-                                                                    <Link to={item.link}>
+                                                                    <Link to={item.to}>
                                                                         <img src={item.image} alt={item.title} />
                                                                         <span className="menu-title">{item.title}</span>
                                                                     </Link>
@@ -251,8 +251,8 @@ function MainHeader({ transparent }) {
                                     <h5 className="mb-0">300.00$</h5>
                                 </div>
                                 <div className="mt-auto text-center">
-                                    <Link to="/shop-checkout" className="btn btn-primary btn-hover1 mx-1">Checkout</Link>
-                                    <Link to="/shop-cart" className="btn btn-secondary btn-hover1 mx-1">View Cart</Link>
+                                    <Link to="#" className="btn btn-primary btn-hover1 mx-1">Checkout</Link>
+                                    <Link to="#" className="btn btn-secondary btn-hover1 mx-1">View Cart</Link>
                                 </div>
                             </div>
                         </div>

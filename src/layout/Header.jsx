@@ -259,8 +259,8 @@ function Header() {
                                     <h5 className="mb-0">300.00$</h5>
                                 </div>
                                 <div className="mt-auto text-center">
-                                    <Link to="/shop-checkout" className="btn btn-primary btn-hover1 mx-1">Checkout</Link>
-                                    <Link to="/shop-cart" className="btn btn-secondary btn-hover1 mx-1">View Cart</Link>
+                                    <Link to="#" className="btn btn-primary btn-hover1 mx-1">Checkout</Link>
+                                    <Link to="#" className="btn btn-secondary btn-hover1 mx-1">View Cart</Link>
                                 </div>
                             </div>
                         </div>

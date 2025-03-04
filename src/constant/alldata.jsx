@@ -210,8 +210,8 @@ export const menudata = [
         classChange: "has-mega-menu",
         content: [
             { title: "01 Skin Care", to: "/", image: IMAGES.demohome3, },
-            { title: "02 Dentist", to: "/", image: IMAGES.demohome2, },
-            { title: "03 Medical", to: "/", image: IMAGES.demohome1, },
+            { title: "02 Dentist", to: "#", image: IMAGES.demohome2, },
+            { title: "03 Medical", to: "#", image: IMAGES.demohome1, },
         ],
     },
     {

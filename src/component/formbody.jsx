@@ -1,16 +1,30 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import emailjs from '@emailjs/browser';
+
 
 function FormBody() {
     const [startDate, setStartDate] = useState(new Date());
+    const form = useRef();
+	const sendEmail = (e) => {
+		e.preventDefault();
+		//emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', form.current, 'YOUR_USER_ID')
+        emailjs.sendForm('service_61hny88', 'template_vvlidif', e.target, 'd9b2e0f5fc72cb94792110e8ff2028f3-us16')
+		  .then((result) => {
+			  console.log('SUCCESS!',result.text);
+		  }, (error) => {
+			  console.log('FAILED...',error.text);
+		  });
+		  e.target.reset()
+	};	
     return (
         <>
             <div className="form-body">
                 <div className="title-head">
                     <h2 className="form-title m-b20"> Book Your Appointment </h2>
                 </div>
-                <form action="../assets/script/contact_smtp.php" className="dzForm" method="POST">
+                <form ref={form} onSubmit={sendEmail} className="dzForm" method="POST">
                     <input type="hidden" className="form-control" name="dzToDo" value="/Appointment" />
                     <input type="hidden" className="form-control" name="reCaptchaEnable" value="0" />
                     <div className="dzFormMsg"></div>
