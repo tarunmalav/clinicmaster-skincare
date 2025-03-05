@@ -27,8 +27,8 @@ function Root() {
             <div className="page-wraper">
 
                 <BrowserRouter>
+                    <Scroll/>
                     <Routes>
-                        <Scroll/>
                         <Route path="/" exact element={<Index />} />
                         <Route path="/about-us" element={<AboutUs />} />
                         <Route path="/about-us-2" element={<AboutUs2 />} />
