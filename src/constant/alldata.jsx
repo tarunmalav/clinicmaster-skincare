@@ -266,9 +266,9 @@ export const menudata = [
     },
 ]
 export const shopsidebarcartdata = [
-    { image: IMAGES.shop1, title: 'Herbal beauty', },
-    { image: IMAGES.shop2, title: 'Green beauty', },
-    { image: IMAGES.shop4, title: 'Sun beauty', },
+    { quantity: 1, price: 50 ,image: IMAGES.shop1, title: 'Herbal beauty', },
+    { quantity: 1, price: 60 ,image: IMAGES.shop2, title: 'Green beauty', },
+    { quantity: 1, price: 40 ,image: IMAGES.shop4, title: 'Sun beauty', },
 ]
 export const pricinglistdata = [
     { title: ' Skin Cancer Screenings', },

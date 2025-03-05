@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
 import { IMAGES, SVGICON } from "../../constant/theme";
+import { useState } from "react";
+import { marqueelist1, marqueelist2 } from "../../constant/alldata";
 import Footer from "../../layout/footer";
 import SkinCard1 from "../../component/skincard1";
-import { marqueelist1, marqueelist2 } from "../../constant/alldata";
 import AfterTreatment from "../../component/aftertreatment";
 import ChoosePlan from "../../component/chooseplan";
 import BestDentist from "../../component/bestdentist";
@@ -16,7 +17,6 @@ import Filtertab from "../../component/filtertab";
 import FlexSwiper from "../../component/flexswiper";
 import Teams from "../../component/teams";
 import ModalVideo from 'react-modal-video';
-import { useState } from "react";
 import RotateBoxModal from "../../component/rotateboxmodal";
 import MainHeader from "../../layout/mainheader";
 import ScrolltoTop from "../../component/scrolltotop";

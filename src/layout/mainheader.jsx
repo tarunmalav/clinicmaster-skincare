@@ -3,14 +3,13 @@ import { IMAGES } from "../constant/theme";
 import React, { useEffect, useRef, useState } from "react";
 import { menudata, shopsidebarcartdata } from "../constant/alldata";
 import emailjs from '@emailjs/browser'; 
+import ShopSidebar from "../component/shopsidebar";
 
 function MainHeader({ transparent }) {
     // toggle show 
     const [show, setShow] = useState(null);
     const [isActive, setIsActive] = useState(null);
     const [scroll, setScroll] = useState(false);
-    const [count, setCount] = useState(1);
-
     const handleclick = (index) => {
         setShow(index)
         console.log(index)
@@ -37,18 +36,7 @@ function MainHeader({ transparent }) {
         return () => {
             window.removeEventListener('scroll', scrollHandler)
         }
-    }, [])
-
-    const increment = () => {
-        setCount(count + 1);
-    };
-    const decrement = () => {
-        setCount(count - 1);
-    };
-    const removeDiv = (i) => {
-        let list = document.querySelectorAll('.sidebar-cart-list li')
-        list[i].remove()
-    };
+    }, []) 
     const form = useRef(); 
     const sendEmail = (e) => {
         e.preventDefault(); 
@@ -220,54 +208,7 @@ function MainHeader({ transparent }) {
                 <div className={`offcanvas dz-offcanvas offcanvas offcanvas-end ${show == 2 ? 'show' : ''}`} tabIndex="-1" id="sidebarCart">
                     <button onClick={() => setShow(false)} type="button" className="btn-close m-t10 m-l10" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     <div className="offcanvas-body">
-                        <div className="sidebar-cart-wrapper">
-                            <h2 className="sidebar-title">Shopping Cart <span className="badge badge-primary badge-circle px-0">3</span></h2>
-                            <div className="shop-sidebar-cart">
-                                <ul className="sidebar-cart-list">
-                                    {shopsidebarcartdata.map((data, i) => (
-                                        <li key={i}>
-                                            <div className="cart-widget">
-                                                <div className="dz-media me-3">
-                                                    <img src={data.image} alt="" />
-                                                </div>
-                                                <div className="cart-content">
-                                                    <h3 className="title"><Link to="/shop-details">{data.title}</Link></h3>
-                                                    <div className="d-flex align-items-center">
-                                                        <div className="btn-quantity quantity-sm style-2 me-3">
-                                                            <div className="input-group bootstrap-touchspin">
-                                                                <span className="input-group-addon bootstrap-touchspin-prefix d-none"> </span>
-                                                                <input type="text" value={count} className="quantity-input form-control d-block" />
-                                                                <span className="input-group-addon bootstrap-touchspin-postfix d-none"></span>
-                                                                <span className="input-group-btn-vertical">
-                                                                    <button onClick={increment} className="btn btn-default bootstrap-touchspin-up" type="button">
-                                                                        <i className="fa-solid fa-plus" />
-                                                                    </button>
-                                                                    <button onClick={decrement} className="btn btn-default bootstrap-touchspin-down" type="button">
-                                                                        <i className="fa-solid fa-minus" />
-                                                                    </button>
-                                                                </span>
-                                                            </div>
-                                                        </div>
-                                                        <h6 className="dz-price mb-0">$50.00</h6>
-                                                    </div>
-                                                </div>
-                                                <Link onClick={() => removeDiv(i)} to={"#"} className="dz-close">
-                                                    <i className="feather icon-x" />
-                                                </Link>
-                                            </div>
-                                        </li>
-                                    ))}
-                                </ul>
-                                <div className="cart-total">
-                                    <h5 className="mb-0">Subtotal:</h5>
-                                    <h5 className="mb-0">300.00$</h5>
-                                </div>
-                                <div className="mt-auto text-center">
-                                    <Link to="#" className="btn btn-primary btn-hover1 mx-1">Checkout</Link>
-                                    <Link to="#" className="btn btn-secondary btn-hover1 mx-1">View Cart</Link>
-                                </div>
-                            </div>
-                        </div>
+                        <ShopSidebar/>
                     </div>
                 </div>
             </header >
