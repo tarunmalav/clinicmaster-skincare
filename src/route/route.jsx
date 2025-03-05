@@ -19,6 +19,7 @@ import BlogListSidebar from "../pages/blog/blog-list-sidebar";
 import BlogDetails from "../pages/blog/blog-details";
 import ContactUs from "../pages/contactus/contact-us";
 import ContactUs2 from "../pages/contactus/contact-us-2";
+import Scroll from "../component/scroll";
 
 function Root() {
     return (
@@ -27,6 +28,7 @@ function Root() {
 
                 <BrowserRouter>
                     <Routes>
+                        <Scroll/>
                         <Route path="/" exact element={<Index />} />
                         <Route path="/about-us" element={<AboutUs />} />
                         <Route path="/about-us-2" element={<AboutUs2 />} />
