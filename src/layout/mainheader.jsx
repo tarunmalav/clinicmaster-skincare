@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 import { IMAGES } from "../constant/theme";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { menudata, shopsidebarcartdata } from "../constant/alldata";
+import emailjs from '@emailjs/browser'; 
 
 function MainHeader({ transparent }) {
     // toggle show 
@@ -47,6 +48,17 @@ function MainHeader({ transparent }) {
     const removeDiv = (i) => {
         let list = document.querySelectorAll('.sidebar-cart-list li')
         list[i].remove()
+    };
+    const form = useRef(); 
+    const sendEmail = (e) => {
+        e.preventDefault(); 
+        emailjs.sendForm('service_61hny88', 'template_vvlidif', form.current, {publicKey: 'aYOgb_ORYkjD-hXhl',})
+        .then((result) => {
+            console.log('SUCCESS!', result.text);
+        },(error) => {
+            console.log('FAILED...', error.text);
+        },
+        );
     };
     return (
         <>
@@ -175,7 +187,7 @@ function MainHeader({ transparent }) {
                             <div className="widget-title">
                                 <h4 className="title">Newsletter</h4>
                             </div>
-                            <form className="dzSubscribe style-2" action="../assets/script/mailchimp.php" method="post">
+                            <form className="dzSubscribe style-2" ref={form} onSubmit={sendEmail} method="post">
                                 <div className="dzSubscribeMsg"></div>
                                 <div className="form-group">
                                     <div className="input-group mb-0">
