@@ -8,18 +8,17 @@ import { useRef, useState } from "react";
 
 function ContactUs2() {
     const [map, setMap] = useState(1)
-    const form = useRef();
-	const sendEmail = (e) => {
-		e.preventDefault();
-		//emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', form.current, 'YOUR_USER_ID')
-        emailjs.sendForm('service_61hny88', 'template_vvlidif', e.target, 'd9b2e0f5fc72cb94792110e8ff2028f3-us16')
-		  .then((result) => {
-			  console.log('SUCCESS!',result.text);
-		  }, (error) => {
-			  console.log('FAILED...',error.text);
-		  });
-		  e.target.reset()
-	};	
+    const form = useRef(); 
+    const sendEmail = (e) => {
+        e.preventDefault(); 
+        emailjs.sendForm('service_61hny88', 'template_vvlidif', form.current, {publicKey: 'aYOgb_ORYkjD-hXhl',})
+        .then((result) => {
+            console.log('SUCCESS!', result.text);
+        },(error) => {
+            console.log('FAILED...', error.text);
+        },
+        );
+    };
     return (
         <>
             <Header />

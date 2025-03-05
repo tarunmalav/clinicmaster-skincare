@@ -18,18 +18,17 @@ function ShopDetails() {
     const decrement = () => {
         setCount(count - 1);
     };
-    const form = useRef();
-	const sendEmail = (e) => {
-		e.preventDefault();
-		//emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', form.current, 'YOUR_USER_ID')
-        emailjs.sendForm('service_61hny88', 'template_vvlidif', e.target, 'd9b2e0f5fc72cb94792110e8ff2028f3-us16')
-		  .then((result) => {
-			  console.log('SUCCESS!',result.text);
-		  }, (error) => {
-			  console.log('FAILED...',error.text);
-		  });
-		  e.target.reset()
-	};	
+    const form = useRef(); 
+    const sendEmail = (e) => {
+        e.preventDefault(); 
+        emailjs.sendForm('service_61hny88', 'template_vvlidif', form.current, {publicKey: 'aYOgb_ORYkjD-hXhl',})
+        .then((result) => {
+            console.log('SUCCESS!', result.text);
+        },(error) => {
+            console.log('FAILED...', error.text);
+        },
+        );
+    };
     return (
         <>
             <MainHeader />
@@ -67,7 +66,7 @@ function ShopDetails() {
                                         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
                                         <div className="meta-content m-b30 d-flex align-items-end">
                                             <div className="me-3">
-                                                <span className="price">$89.00 <del>$119.00</del></span>
+                                               <span className="price">$89.00 <del>$119.00</del></span>
                                             </div>
                                         </div>
                                         <div className="product-num">
