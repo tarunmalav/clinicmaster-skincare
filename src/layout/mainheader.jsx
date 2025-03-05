@@ -91,7 +91,7 @@ function MainHeader({ transparent }) {
                                         <React.Fragment key={data.id || i}>
                                             {data.classChange && data.classChange.includes('has-mega-menu') ? (
                                                 <li className={`has-mega-menu sub-menu-down auto-width menu-left ${i === isActive ? 'open' : ''}`}>
-                                                    <Link onClick={() => menuHandler(i)} to={data.to}>
+                                                    <Link onClick={() => menuHandler(i)} to={"#"}>
                                                         <span>{data.title}</span>
                                                         <i className="fas fa-chevron-down tabIndex" />
                                                     </Link>

@@ -104,7 +104,7 @@ function Header() {
                                                         <ul className="demo-menu">
                                                             {data.content.map((item, index) => (
                                                                 <li key={item.id || index}>
-                                                                    <Link to={item.link}>
+                                                                    <Link to={item.to}>
                                                                         <img src={item.image} alt={item.title} />
                                                                         <span className="menu-title">{item.title}</span>
                                                                     </Link>
