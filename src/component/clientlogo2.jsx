@@ -8,9 +8,21 @@ function ClientLogo2() {
             <Swiper
                 className="wiper client-swiper2"
                 slidesPerView={4}
+                spaceBetween={30}
                 loop={true}
                 autoplay={{
                     delay: 1500,
+                }}
+                breakpoints={{
+                    767: {
+                        slidesPerView: 4,
+                    },
+                    575: {
+                        slidesPerView: 3
+                    },
+                    320:{
+                        slidesPerView: 2
+                    },
                 }}
                 modules={[Autoplay]}
             >
