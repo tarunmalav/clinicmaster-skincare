@@ -1,5 +1,6 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { clientdata2 } from "../constant/alldata";
+import { Autoplay } from "swiper/modules";
 
 function ClientLogo2() {
     return (
@@ -8,6 +9,10 @@ function ClientLogo2() {
                 className="wiper client-swiper2"
                 slidesPerView={4}
                 loop={true}
+                autoplay={{
+                    delay: 1500,
+                }}
+                modules={[Autoplay]}
             >
                 {clientdata2.map((data, i) => (
                     <SwiperSlide key={i} className="wow bounceIn" data-wow-delay={data.delay} data-wow-duration="0.8s">

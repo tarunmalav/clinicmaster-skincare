@@ -95,9 +95,9 @@ function Index() {
 					</div>
 					<div className="vertical-info left">
 						<ul className="social-list">
-							<li><Link to="https://www.instagram.com/">Instagram</Link></li>
-							<li><Link to="https://www.facebook.com/">Facebook</Link></li>
-							<li><Link to="https://twitter.com/">twitter</Link></li>
+							<li><Link to="https://www.instagram.com/dexignzone/">Instagram</Link></li>
+							<li><Link to="https://www.facebook.com/dexignzone">Facebook</Link></li>
+							<li><Link to="https://x.com/dexignzone">twitter</Link></li>
 						</ul>
 						<Link to={"#"} className="btn btn-white btn-sm px-2 py-3 btn-shadow rounded">LET’S TALK</Link>
 					</div>

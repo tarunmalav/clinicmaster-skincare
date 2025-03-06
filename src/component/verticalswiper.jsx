@@ -22,7 +22,10 @@ function VerticalSwiper() {
                         nextEl: '.blog-swiper-next',
                         prevEl: '.blog-swiper-prev',
                     }}
-                    modules={[FreeMode, Thumbs, EffectFade]}
+                    autoplay={{
+                        delay: 1500,
+                    }}
+                    modules={[Autoplay,FreeMode, Thumbs, EffectFade]}
                 >
                     {verticaldata1.map((data, i) => (
                         <SwiperSlide key={i}>

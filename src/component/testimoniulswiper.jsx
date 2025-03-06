@@ -14,6 +14,9 @@ function TestimoniulSwiper() {
                     el: ".swiper-pagination",
                     clickable: true
                 }}
+                autoplay={{
+                    delay: 1500,
+                }}
                 modules={[Autoplay, Pagination]}
             >
                 {testmoniuldata.map((data, i) => (

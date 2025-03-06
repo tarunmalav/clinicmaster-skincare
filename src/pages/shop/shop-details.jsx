@@ -113,22 +113,22 @@ function ShopDetails() {
                                             <ul className="social-icon">
                                                 <li><strong>Share:</strong></li>
                                                 <li>
-                                                    <Link to="https://www.facebook.com" target="_blank">
+                                                    <Link to="https://www.facebook.com/dexignzone" target="_blank">
                                                         <i className="fa-brands fa-facebook-f" />
                                                     </Link>
                                                 </li>
                                                 <li>
-                                                    <Link to="https://www.linkedin.com" target="_blank">
+                                                    <Link to="https://www.linkedin.com/showcase/dexignzone/" target="_blank">
                                                         <i className="fa-brands fa-linkedin-in" />
                                                     </Link>
                                                 </li>
                                                 <li>
-                                                    <Link to="https://www.instagram.com" target="_blank">
+                                                    <Link to="https://www.instagram.com/dexignzone/" target="_blank">
                                                         <i className="fa-brands fa-instagram" />
                                                     </Link>
                                                 </li>
                                                 <li>
-                                                    <Link to="https://twitter.com" target="_blank">
+                                                    <Link to="https://x.com/dexignzone" target="_blank">
                                                         <i className="fa-brands fa-twitter" />
                                                     </Link>
                                                 </li>

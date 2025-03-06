@@ -18,9 +18,9 @@ function PageBanner({ title }) {
                 </div>
                 <div className="vertical-info left">
                     <ul className="social-list wow fadeInLeft" data-wow-delay="0.4s" data-wow-duration="0.8s">
-                        <li><Link to="https://www.instagram.com" target="_blank">Instagram</Link></li>
-                        <li><Link to="https://www.facebook.com" target="_blank">Facebook</Link></li>
-                        <li><Link to="https://twitter.com" target="_blank">twitter</Link></li>
+                        <li><Link to="https://www.instagram.com/dexignzone" target="_blank">Instagram</Link></li>
+                        <li><Link to="https://www.facebook.com/dexignzone" target="_blank">Facebook</Link></li>
+                        <li><Link to="https://twitter.com/dexignzone" target="_blank">twitter</Link></li>
                     </ul>
                 </div>
                 <div className="blur1"></div>
